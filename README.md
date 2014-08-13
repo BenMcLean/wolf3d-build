@@ -79,6 +79,8 @@ Remember to set your PATH environment variable in your DOSBox to `path=c:\borlan
 
 ### Anything else? ###
 
+Aside from that I decide to do things like this on copious amounts of sleep deprivation?
+
 That's about it.
 
 Hopefully this will help get things bootstrapped for a few people.
