@@ -1,8 +1,8 @@
 # README #
 
-A great article, [Let's Compile Like its 1992](http://fabiensanglard.net/Compile_Like_Its_1992/), provides some real nostalgia in its detailed description of setting up a build environment to compile classic Wolf3D. I've attempted to make it easy to *"jump start"* the process by providing a pre-configured environment. 
+A great article, [Let's Compile Like its 1992][original-post], provides some real nostalgia in its detailed description of setting up a build environment to compile classic [Wolfenstein 3D][wolf3d-wiki]. I've attempted to make it easy to *"jump start"* the process by providing a pre-configured environment. 
 
-*To fully appreciate the process one **really should** read the article in full and go through all the steps!* 
+*To fully appreciate the process one **really should** [read the article][original-post] in full and go through all the steps!* 
 
 But... if you want a bit of a bootstrap...
 
@@ -17,13 +17,13 @@ But... if you want a bit of a bootstrap...
 
 #### Install DOSBox ####
 
-Make sure you have [DOSBox](http://www.dosbox.com/) installed and setup. In my case (using **crouton** to run *trusty* on my Chromebox)
+Make sure you have [DOSBox][dosbox] installed and setup. In my case (using **[crouton][crouton]** to run *trusty* on my Chromebox)
 
 ```
 sudo apt-get install dosbox
 ```
 
-Pretty well did the trick. Your mileage may vary and DOSBox configuration is on you.
+Pretty well did the trick. Your mileage may vary and [DOSBox][dosbox] configuration is on you.
 
 #### Check it out and go...(almost) ####
 
@@ -75,7 +75,13 @@ Which constitutes:
 
 ### Tips ###
 
-Remember to set your PATH environment variable in your DOSBox to `path=c:\borlandc\bin` per Fabien's write-up, else Borland C will bork about not finding the tools to perform the build (eg TASM.EXE).
+#### Set your PATH ####
+Remember to set your PATH environment variable in your [DOSBox][dosbox] to `path=c:\borlandc\bin` per Fabien's write-up, else Borland C will bork about not finding the tools to perform the build (eg TASM.EXE).
+
+#### Error: Tried to load a sparse page! ####
+This was [reported as a issue][sparse-page-issue] where I [comment][sparse-page-issue-comment] about a [comment thread][sparse-page-post-comment] that addresses this on [Fabian's original post][original-post].
+
+The upshot is this is apparently a edge case issue with [DOSBox][dosbox] and digitized sound and the solution provided is `Set "Digitised Sound" to "None"`.
 
 ### Anything else? ###
 
@@ -86,3 +92,12 @@ That's about it.
 Hopefully this will help get things bootstrapped for a few people.
 
 cheers! -morgan
+
+[original-post]: http://fabiensanglard.net/Compile_Like_Its_1992/ "Let's Compile Like its 1992"
+[sparse-page-post-comment]: https://disqus.com/home/discussion/fabiensanglardswebsite/compile_like_its_1992/#comment-1538345406
+[sparse-page-issue]: https://bitbucket.org/Corra/wolf3d-build/issues/1/tried-to-load-a-sparse-page "Tried to load a sparse page!"
+[sparse-page-issue-comment]: https://bitbucket.org/Corra/wolf3d-build/issues/1/tried-to-load-a-sparse-page#comment-21321588
+[dosbox]: http://www.dosbox.com/ "DOSBox"
+[wolf3d-wiki]: https://en.wikipedia.org/wiki/Wolfenstein_3D "Wikipedia entry: Wolfenstein 3D"
+[crouton]: https://github.com/dnschneid/crouton
+
